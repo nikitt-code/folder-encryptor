@@ -1,6 +1,7 @@
 import os
 
-def getFiles(path: str) -> bytearray:
+
+def get_files(path: str) -> bytearray or bool:
     if os.path.isdir(path):
         found = []
         for root, dirs, files in os.walk(path, topdown=True):
@@ -12,8 +13,8 @@ def getFiles(path: str) -> bytearray:
         return False
 
 
-cats = getFiles(input("Enter folder name: "))
+cats = get_files(input("Enter folder name: "))
 if cats:
     print(cats)
 else:
-    print(cats)
+    print("Folder is not exists")

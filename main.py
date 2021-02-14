@@ -1,6 +1,5 @@
 import os
 
-
 def get_files(path: str) -> bytearray or bool:
     if os.path.isdir(path):
         found = []
@@ -23,10 +22,10 @@ def read_file(path: str) -> bytes or bool:
         return False
 
 
-cats = get_files(input("Enter folder name: "))
+cats = get_files(input("Enter folder name (use 'test_folder' for tests): "))
 if cats:
     for file in cats:
         data = read_file(file)
-        print(data)
+        print(file + ":" + data)
 else:
     print("Folder is not exists")
